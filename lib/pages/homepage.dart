@@ -56,14 +56,16 @@ class _homeState extends State<home> {
         ),
       ),
       body: Container(
-        margin: EdgeInsets.only(left: 20, top: 10, right: 20),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            StudentList(),
-          ],
+        margin: EdgeInsets.only(left: 20, top: 10, right: 20,bottom: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              StudentList(),
+            ],
+          ),
         ),
       ),
     );
