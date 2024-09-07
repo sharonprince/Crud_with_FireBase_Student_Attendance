@@ -186,7 +186,21 @@ class _StudentListState extends State<StudentList> {
                                 ),
                                 GestureDetector(
                                   onTap: ()async{
-                                    await DatabaseMethods().deleteStudents(ds.id);
+                                    await DatabaseMethods().deleteStudents(ds.id).then(
+                        (value) {
+                        
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              backgroundColor: Colors.green,
+                              content: Text(
+                                "Student data has been Deleted Successfully !!!!",
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          );
+                        },
+                      );
 
                                   },
                                   child: Icon(Icons.delete))

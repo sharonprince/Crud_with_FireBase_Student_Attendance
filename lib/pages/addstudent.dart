@@ -17,7 +17,6 @@ class _addStudentState extends State<addStudent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -92,7 +91,8 @@ class _addStudentState extends State<addStudent> {
                   child: TextField(
                     controller: rollNoController,
                     decoration: InputDecoration(
-                        border: InputBorder.none, hintText: "Enter the Roll No"),
+                        border: InputBorder.none,
+                        hintText: "Enter the Roll No"),
                   ),
                 ),
               ),
@@ -128,24 +128,37 @@ class _addStudentState extends State<addStudent> {
               ),
               Center(
                 child: GestureDetector(
-                  onTap: () async{
-                    if (nameController != "" &&rollNoController != "" &&ageController != "") {
-                      String addId =  randomAlphaNumeric(10);
+                  onTap: () async {
+                    if (nameController != "" &&
+                        rollNoController != "" &&
+                        ageController != "") {
+                      String addId = randomAlphaNumeric(10);
                       Map<String, dynamic> studentInfoMap = {
                         "Name": nameController.text,
                         "Rollno": rollNoController.text,
                         "Age": ageController.text,
                         "Absent": false,
-                        "Present":false
+                        "Present": false
                       };
-                      await DatabaseMethods().addStudents(studentInfoMap, addId).then((value) {
-                        nameController.clear();
-                        ageController.clear();
-                        rollNoController.clear();
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          backgroundColor: Colors.green,
-                          content: Text("Student data has been uploaded !!!!", style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)));
-                      },);
+                      await DatabaseMethods()
+                          .addStudents(studentInfoMap, addId)
+                          .then(
+                        (value) {
+                          nameController.clear();
+                          ageController.clear();
+                          rollNoController.clear();
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              backgroundColor: Colors.green,
+                              content: Text(
+                                "Student data has been uploaded !!!!",
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          );
+                        },
+                      );
                     }
                     Navigator.pop(context);
                   },
