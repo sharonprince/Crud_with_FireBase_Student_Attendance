@@ -34,12 +34,12 @@ class _StudentListState extends State<StudentList> {
             ? ListView.builder(
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
+                   physics: ClampingScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 itemCount: snapshot.data.docs.length,
                 itemBuilder: (context, index) {
                   DocumentSnapshot ds = snapshot.data.docs[index];
                   return Container(
-                    
                     margin: EdgeInsets.only(bottom: 20),
                     child: Material(
                       borderRadius: BorderRadius.circular(20),

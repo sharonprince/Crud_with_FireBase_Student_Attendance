@@ -15,16 +15,12 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
- 
-
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
-          backgroundColor: Colors.deepPurple[100],
+        backgroundColor: Colors.deepPurple[100],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -56,7 +52,7 @@ class _homeState extends State<home> {
         ),
       ),
       body: Container(
-        margin: EdgeInsets.only(left: 20, top: 10, right: 20,bottom: 20),
+        margin: EdgeInsets.only(left: 20, top: 10, right: 20, bottom: 20),
         child: SingleChildScrollView(
           child: Column(
             children: [
