@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_with_crud/Database/databasemethods.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class StudentList extends StatefulWidget {
   const StudentList({super.key});
@@ -181,8 +182,14 @@ class _StudentListState extends State<StudentList> {
                                         ),
                                       ),
                                 SizedBox(
-                                  width: 10,
+                                  width: 120,
                                 ),
+                                GestureDetector(
+                                  onTap: ()async{
+                                    await DatabaseMethods().deleteStudents(ds.id);
+
+                                  },
+                                  child: Icon(Icons.delete))
                               ],
                             ),
                           ],

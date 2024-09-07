@@ -18,4 +18,8 @@ class DatabaseMethods {
 return await FirebaseFirestore.instance.collection("Students").doc(id).update({attendanceCase: value});
 
   }
+  deleteStudents(String id)async{
+    return await FirebaseFirestore.instance.collection("Students").doc(id).delete();
+
+  }
 }
