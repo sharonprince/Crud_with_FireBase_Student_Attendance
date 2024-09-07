@@ -39,6 +39,7 @@ class _StudentListState extends State<StudentList> {
                 itemBuilder: (context, index) {
                   DocumentSnapshot ds = snapshot.data.docs[index];
                   return Container(
+                    
                     margin: EdgeInsets.only(bottom: 20),
                     child: Material(
                       borderRadius: BorderRadius.circular(20),
@@ -48,7 +49,7 @@ class _StudentListState extends State<StudentList> {
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
+                          color: Colors.white60,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +67,7 @@ class _StudentListState extends State<StudentList> {
                                   ds["Name"],
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.blue,
+                                      color: Colors.deepPurple,
                                       fontSize: 24),
                                 ),
                               ],
@@ -87,7 +88,7 @@ class _StudentListState extends State<StudentList> {
                                   ds["Rollno"],
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.blue,
+                                      color: Colors.deepPurple,
                                       fontSize: 24),
                                 ),
                               ],
@@ -108,7 +109,7 @@ class _StudentListState extends State<StudentList> {
                                   ds["Age"],
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.blue,
+                                      color: Colors.deepPurple,
                                       fontSize: 24),
                                 ),
                               ],

@@ -15,15 +15,16 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
-
-  Stream? studentStream;
+ 
 
   
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
+          backgroundColor: Colors.deepPurple[100],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -49,7 +50,7 @@ class _homeState extends State<home> {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => addStudent()));
         },
-        backgroundColor: Colors.blue[300],
+        backgroundColor: Colors.deepPurple[200],
         child: Icon(
           Icons.add,
         ),
@@ -61,7 +62,7 @@ class _homeState extends State<home> {
             SizedBox(
               height: 20,
             ),
-           StudentList(),
+            StudentList(),
           ],
         ),
       ),
