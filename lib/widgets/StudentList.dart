@@ -10,7 +10,7 @@ class StudentList extends StatefulWidget {
 }
 
 class _StudentListState extends State<StudentList> {
-    Stream? studentStream
+    Stream? studentStream;
     
 
       getOnTheLoad() async {
